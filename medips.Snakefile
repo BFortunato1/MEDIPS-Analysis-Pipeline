@@ -138,17 +138,17 @@ rule copy_run_files:
 		"cp config.yaml run_files/config.yaml.{params.run}"
 
 # create links to fastq files in the attic folder
-#rule fastq_links:
-#	input:
-#		fq1 = get_fq1,
-#		fq2 = get_fq2
-#	output:
-#		fq1_ln = "attic/{sample}_1.fq.gz",
-#		fq2_ln = "attic/{sample}_2.fq.gz"
-#	shell:
-#		"ln -s $PWD/{input.fq1} {output.fq1_ln} && "
-#		"ln -s $PWD/{input.fq2} {output.fq2_ln}"
-#
+rule fastq_links:
+	input:
+		fq1 = get_fq1,
+		fq2 = get_fq2
+	output:
+		fq1_ln = "attic/{sample}_1.fq.gz",
+		fq2_ln = "attic/{sample}_2.fq.gz"
+	shell:
+		"ln -s $PWD/{input.fq1} {output.fq1_ln} && "
+		"ln -s $PWD/{input.fq2} {output.fq2_ln}"
+
 # run fastqc
 rule fastqc:
 	input:

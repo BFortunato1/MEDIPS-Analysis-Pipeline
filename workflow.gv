@@ -1,0 +1,655 @@
+digraph snakemake_dag {
+    graph[bgcolor=white, margin=0];
+    node[shape=box, style=rounded, fontname=sans,                 fontsize=10, penwidth=2];
+    edge[penwidth=2, color=grey];
+	0[label = "all", color = "0.33 0.6 0.85", style="rounded"];
+	1[label = "multiqc", color = "0.14 0.6 0.85", style="rounded"];
+	2[label = "plot_qc", color = "0.56 0.6 0.85", style="rounded"];
+	3[label = "group_plots", color = "0.19 0.6 0.85", style="rounded"];
+	4[label = "performance", color = "0.03 0.6 0.85", style="rounded"];
+	5[label = "performance_leave_one_out", color = "0.22 0.6 0.85", style="rounded"];
+	6[label = "rms", color = "0.42 0.6 0.85", style="rounded"];
+	7[label = "fastqc\nsample: FFPED09E", color = "0.28 0.6 0.85", style="rounded"];
+	8[label = "trim_and_fastqc\nsample: FFPED09E", color = "0.08 0.6 0.85", style="rounded"];
+	9[label = "align", color = "0.47 0.6 0.85", style="rounded"];
+	10[label = "insert_sizes", color = "0.36 0.6 0.85", style="rounded"];
+	11[label = "unique_main_chr_reads", color = "0.44 0.6 0.85", style="rounded"];
+	12[label = "medips", color = "0.61 0.6 0.85", style="rounded"];
+	13[label = "coupling_set", color = "0.17 0.6 0.85", style="rounded"];
+	14[label = "reference_DMRs", color = "0.50 0.6 0.85", style="rounded"];
+	15[label = "DMRs\ni: 001", color = "0.00 0.6 0.85", style="rounded"];
+	16[label = "DMRs\ni: 002", color = "0.00 0.6 0.85", style="rounded"];
+	17[label = "DMRs\ni: 003", color = "0.00 0.6 0.85", style="rounded"];
+	18[label = "DMRs\ni: 004", color = "0.00 0.6 0.85", style="rounded"];
+	19[label = "DMRs\ni: 005", color = "0.00 0.6 0.85", style="rounded"];
+	20[label = "DMRs\ni: 006", color = "0.00 0.6 0.85", style="rounded"];
+	21[label = "DMRs\ni: 007", color = "0.00 0.6 0.85", style="rounded"];
+	22[label = "DMRs\ni: 008", color = "0.00 0.6 0.85", style="rounded"];
+	23[label = "DMRs\ni: 009", color = "0.00 0.6 0.85", style="rounded"];
+	24[label = "DMRs\ni: 010", color = "0.00 0.6 0.85", style="rounded"];
+	25[label = "DMRs\ni: 011", color = "0.00 0.6 0.85", style="rounded"];
+	26[label = "DMRs\ni: 012", color = "0.00 0.6 0.85", style="rounded"];
+	27[label = "DMRs\ni: 013", color = "0.00 0.6 0.85", style="rounded"];
+	28[label = "DMRs\ni: 014", color = "0.00 0.6 0.85", style="rounded"];
+	29[label = "DMRs\ni: 015", color = "0.00 0.6 0.85", style="rounded"];
+	30[label = "DMRs\ni: 016", color = "0.00 0.6 0.85", style="rounded"];
+	31[label = "DMRs\ni: 017", color = "0.00 0.6 0.85", style="rounded"];
+	32[label = "DMRs\ni: 018", color = "0.00 0.6 0.85", style="rounded"];
+	33[label = "DMRs\ni: 019", color = "0.00 0.6 0.85", style="rounded"];
+	34[label = "DMRs\ni: 020", color = "0.00 0.6 0.85", style="rounded"];
+	35[label = "DMRs\ni: 021", color = "0.00 0.6 0.85", style="rounded"];
+	36[label = "DMRs\ni: 022", color = "0.00 0.6 0.85", style="rounded"];
+	37[label = "DMRs\ni: 023", color = "0.00 0.6 0.85", style="rounded"];
+	38[label = "DMRs\ni: 024", color = "0.00 0.6 0.85", style="rounded"];
+	39[label = "DMRs\ni: 025", color = "0.00 0.6 0.85", style="rounded"];
+	40[label = "DMRs\ni: 026", color = "0.00 0.6 0.85", style="rounded"];
+	41[label = "DMRs\ni: 027", color = "0.00 0.6 0.85", style="rounded"];
+	42[label = "DMRs\ni: 028", color = "0.00 0.6 0.85", style="rounded"];
+	43[label = "DMRs\ni: 029", color = "0.00 0.6 0.85", style="rounded"];
+	44[label = "DMRs\ni: 030", color = "0.00 0.6 0.85", style="rounded"];
+	45[label = "DMRs\ni: 031", color = "0.00 0.6 0.85", style="rounded"];
+	46[label = "DMRs\ni: 032", color = "0.00 0.6 0.85", style="rounded"];
+	47[label = "DMRs\ni: 033", color = "0.00 0.6 0.85", style="rounded"];
+	48[label = "DMRs\ni: 034", color = "0.00 0.6 0.85", style="rounded"];
+	49[label = "DMRs\ni: 035", color = "0.00 0.6 0.85", style="rounded"];
+	50[label = "DMRs\ni: 036", color = "0.00 0.6 0.85", style="rounded"];
+	51[label = "DMRs\ni: 037", color = "0.00 0.6 0.85", style="rounded"];
+	52[label = "DMRs\ni: 038", color = "0.00 0.6 0.85", style="rounded"];
+	53[label = "DMRs\ni: 039", color = "0.00 0.6 0.85", style="rounded"];
+	54[label = "DMRs\ni: 040", color = "0.00 0.6 0.85", style="rounded"];
+	55[label = "DMRs\ni: 041", color = "0.00 0.6 0.85", style="rounded"];
+	56[label = "DMRs\ni: 042", color = "0.00 0.6 0.85", style="rounded"];
+	57[label = "DMRs\ni: 043", color = "0.00 0.6 0.85", style="rounded"];
+	58[label = "DMRs\ni: 044", color = "0.00 0.6 0.85", style="rounded"];
+	59[label = "DMRs\ni: 045", color = "0.00 0.6 0.85", style="rounded"];
+	60[label = "DMRs\ni: 046", color = "0.00 0.6 0.85", style="rounded"];
+	61[label = "DMRs\ni: 047", color = "0.00 0.6 0.85", style="rounded"];
+	62[label = "DMRs\ni: 048", color = "0.00 0.6 0.85", style="rounded"];
+	63[label = "DMRs\ni: 049", color = "0.00 0.6 0.85", style="rounded"];
+	64[label = "DMRs\ni: 050", color = "0.00 0.6 0.85", style="rounded"];
+	65[label = "DMRs\ni: 051", color = "0.00 0.6 0.85", style="rounded"];
+	66[label = "DMRs\ni: 052", color = "0.00 0.6 0.85", style="rounded"];
+	67[label = "DMRs\ni: 053", color = "0.00 0.6 0.85", style="rounded"];
+	68[label = "DMRs\ni: 054", color = "0.00 0.6 0.85", style="rounded"];
+	69[label = "DMRs\ni: 055", color = "0.00 0.6 0.85", style="rounded"];
+	70[label = "DMRs\ni: 056", color = "0.00 0.6 0.85", style="rounded"];
+	71[label = "DMRs\ni: 057", color = "0.00 0.6 0.85", style="rounded"];
+	72[label = "DMRs\ni: 058", color = "0.00 0.6 0.85", style="rounded"];
+	73[label = "DMRs\ni: 059", color = "0.00 0.6 0.85", style="rounded"];
+	74[label = "DMRs\ni: 060", color = "0.00 0.6 0.85", style="rounded"];
+	75[label = "DMRs\ni: 061", color = "0.00 0.6 0.85", style="rounded"];
+	76[label = "DMRs\ni: 062", color = "0.00 0.6 0.85", style="rounded"];
+	77[label = "DMRs\ni: 063", color = "0.00 0.6 0.85", style="rounded"];
+	78[label = "DMRs\ni: 064", color = "0.00 0.6 0.85", style="rounded"];
+	79[label = "DMRs\ni: 065", color = "0.00 0.6 0.85", style="rounded"];
+	80[label = "DMRs\ni: 066", color = "0.00 0.6 0.85", style="rounded"];
+	81[label = "DMRs\ni: 067", color = "0.00 0.6 0.85", style="rounded"];
+	82[label = "DMRs\ni: 068", color = "0.00 0.6 0.85", style="rounded"];
+	83[label = "DMRs\ni: 069", color = "0.00 0.6 0.85", style="rounded"];
+	84[label = "DMRs\ni: 070", color = "0.00 0.6 0.85", style="rounded"];
+	85[label = "DMRs\ni: 071", color = "0.00 0.6 0.85", style="rounded"];
+	86[label = "DMRs\ni: 072", color = "0.00 0.6 0.85", style="rounded"];
+	87[label = "DMRs\ni: 073", color = "0.00 0.6 0.85", style="rounded"];
+	88[label = "DMRs\ni: 074", color = "0.00 0.6 0.85", style="rounded"];
+	89[label = "DMRs\ni: 075", color = "0.00 0.6 0.85", style="rounded"];
+	90[label = "DMRs\ni: 076", color = "0.00 0.6 0.85", style="rounded"];
+	91[label = "DMRs\ni: 077", color = "0.00 0.6 0.85", style="rounded"];
+	92[label = "DMRs\ni: 078", color = "0.00 0.6 0.85", style="rounded"];
+	93[label = "DMRs\ni: 079", color = "0.00 0.6 0.85", style="rounded"];
+	94[label = "DMRs\ni: 080", color = "0.00 0.6 0.85", style="rounded"];
+	95[label = "DMRs\ni: 081", color = "0.00 0.6 0.85", style="rounded"];
+	96[label = "DMRs\ni: 082", color = "0.00 0.6 0.85", style="rounded"];
+	97[label = "DMRs\ni: 083", color = "0.00 0.6 0.85", style="rounded"];
+	98[label = "DMRs\ni: 084", color = "0.00 0.6 0.85", style="rounded"];
+	99[label = "DMRs\ni: 085", color = "0.00 0.6 0.85", style="rounded"];
+	100[label = "DMRs\ni: 086", color = "0.00 0.6 0.85", style="rounded"];
+	101[label = "DMRs\ni: 087", color = "0.00 0.6 0.85", style="rounded"];
+	102[label = "DMRs\ni: 088", color = "0.00 0.6 0.85", style="rounded"];
+	103[label = "DMRs\ni: 089", color = "0.00 0.6 0.85", style="rounded"];
+	104[label = "DMRs\ni: 090", color = "0.00 0.6 0.85", style="rounded"];
+	105[label = "DMRs\ni: 091", color = "0.00 0.6 0.85", style="rounded"];
+	106[label = "DMRs\ni: 092", color = "0.00 0.6 0.85", style="rounded"];
+	107[label = "DMRs\ni: 093", color = "0.00 0.6 0.85", style="rounded"];
+	108[label = "DMRs\ni: 094", color = "0.00 0.6 0.85", style="rounded"];
+	109[label = "DMRs\ni: 095", color = "0.00 0.6 0.85", style="rounded"];
+	110[label = "DMRs\ni: 096", color = "0.00 0.6 0.85", style="rounded"];
+	111[label = "DMRs\ni: 097", color = "0.00 0.6 0.85", style="rounded"];
+	112[label = "DMRs\ni: 098", color = "0.00 0.6 0.85", style="rounded"];
+	113[label = "DMRs\ni: 099", color = "0.00 0.6 0.85", style="rounded"];
+	114[label = "DMRs\ni: 100", color = "0.00 0.6 0.85", style="rounded"];
+	115[label = "rm_dup", color = "0.58 0.6 0.85", style="rounded"];
+	116[label = "pos_sort", color = "0.06 0.6 0.85", style="rounded"];
+	117[label = "fixmate", color = "0.31 0.6 0.85", style="rounded"];
+	118[label = "name_sort", color = "0.39 0.6 0.85", style="rounded"];
+	119[label = "sam_to_bam", color = "0.11 0.6 0.85", style="rounded"];
+	1 -> 0
+	2 -> 0
+	3 -> 0
+	4 -> 0
+	5 -> 0
+	6 -> 0
+	7 -> 1
+	8 -> 1
+	9 -> 1
+	1 -> 2
+	10 -> 2
+	11 -> 2
+	12 -> 2
+	12 -> 3
+	13 -> 3
+	14 -> 3
+	15 -> 4
+	16 -> 4
+	17 -> 4
+	18 -> 4
+	19 -> 4
+	20 -> 4
+	21 -> 4
+	22 -> 4
+	23 -> 4
+	24 -> 4
+	25 -> 4
+	26 -> 4
+	27 -> 4
+	28 -> 4
+	29 -> 4
+	30 -> 4
+	31 -> 4
+	32 -> 4
+	33 -> 4
+	34 -> 4
+	35 -> 4
+	36 -> 4
+	37 -> 4
+	38 -> 4
+	39 -> 4
+	40 -> 4
+	41 -> 4
+	42 -> 4
+	43 -> 4
+	44 -> 4
+	45 -> 4
+	46 -> 4
+	47 -> 4
+	48 -> 4
+	49 -> 4
+	50 -> 4
+	51 -> 4
+	52 -> 4
+	53 -> 4
+	54 -> 4
+	55 -> 4
+	56 -> 4
+	57 -> 4
+	58 -> 4
+	59 -> 4
+	60 -> 4
+	61 -> 4
+	62 -> 4
+	63 -> 4
+	64 -> 4
+	65 -> 4
+	66 -> 4
+	67 -> 4
+	68 -> 4
+	69 -> 4
+	70 -> 4
+	71 -> 4
+	72 -> 4
+	73 -> 4
+	74 -> 4
+	75 -> 4
+	76 -> 4
+	77 -> 4
+	78 -> 4
+	79 -> 4
+	80 -> 4
+	81 -> 4
+	82 -> 4
+	83 -> 4
+	84 -> 4
+	85 -> 4
+	86 -> 4
+	87 -> 4
+	88 -> 4
+	89 -> 4
+	90 -> 4
+	91 -> 4
+	92 -> 4
+	93 -> 4
+	94 -> 4
+	95 -> 4
+	96 -> 4
+	97 -> 4
+	98 -> 4
+	99 -> 4
+	100 -> 4
+	101 -> 4
+	102 -> 4
+	103 -> 4
+	104 -> 4
+	105 -> 4
+	106 -> 4
+	107 -> 4
+	108 -> 4
+	109 -> 4
+	110 -> 4
+	111 -> 4
+	112 -> 4
+	113 -> 4
+	114 -> 4
+	14 -> 6
+	8 -> 9
+	115 -> 10
+	115 -> 11
+	115 -> 12
+	13 -> 12
+	115 -> 13
+	12 -> 14
+	13 -> 14
+	12 -> 15
+	13 -> 15
+	3 -> 15
+	14 -> 15
+	12 -> 16
+	13 -> 16
+	3 -> 16
+	14 -> 16
+	12 -> 17
+	13 -> 17
+	3 -> 17
+	14 -> 17
+	12 -> 18
+	13 -> 18
+	3 -> 18
+	14 -> 18
+	12 -> 19
+	13 -> 19
+	3 -> 19
+	14 -> 19
+	12 -> 20
+	13 -> 20
+	3 -> 20
+	14 -> 20
+	12 -> 21
+	13 -> 21
+	3 -> 21
+	14 -> 21
+	12 -> 22
+	13 -> 22
+	3 -> 22
+	14 -> 22
+	12 -> 23
+	13 -> 23
+	3 -> 23
+	14 -> 23
+	12 -> 24
+	13 -> 24
+	3 -> 24
+	14 -> 24
+	12 -> 25
+	13 -> 25
+	3 -> 25
+	14 -> 25
+	12 -> 26
+	13 -> 26
+	3 -> 26
+	14 -> 26
+	12 -> 27
+	13 -> 27
+	3 -> 27
+	14 -> 27
+	12 -> 28
+	13 -> 28
+	3 -> 28
+	14 -> 28
+	12 -> 29
+	13 -> 29
+	3 -> 29
+	14 -> 29
+	12 -> 30
+	13 -> 30
+	3 -> 30
+	14 -> 30
+	12 -> 31
+	13 -> 31
+	3 -> 31
+	14 -> 31
+	12 -> 32
+	13 -> 32
+	3 -> 32
+	14 -> 32
+	12 -> 33
+	13 -> 33
+	3 -> 33
+	14 -> 33
+	12 -> 34
+	13 -> 34
+	3 -> 34
+	14 -> 34
+	12 -> 35
+	13 -> 35
+	3 -> 35
+	14 -> 35
+	12 -> 36
+	13 -> 36
+	3 -> 36
+	14 -> 36
+	12 -> 37
+	13 -> 37
+	3 -> 37
+	14 -> 37
+	12 -> 38
+	13 -> 38
+	3 -> 38
+	14 -> 38
+	12 -> 39
+	13 -> 39
+	3 -> 39
+	14 -> 39
+	12 -> 40
+	13 -> 40
+	3 -> 40
+	14 -> 40
+	12 -> 41
+	13 -> 41
+	3 -> 41
+	14 -> 41
+	12 -> 42
+	13 -> 42
+	3 -> 42
+	14 -> 42
+	12 -> 43
+	13 -> 43
+	3 -> 43
+	14 -> 43
+	12 -> 44
+	13 -> 44
+	3 -> 44
+	14 -> 44
+	12 -> 45
+	13 -> 45
+	3 -> 45
+	14 -> 45
+	12 -> 46
+	13 -> 46
+	3 -> 46
+	14 -> 46
+	12 -> 47
+	13 -> 47
+	3 -> 47
+	14 -> 47
+	12 -> 48
+	13 -> 48
+	3 -> 48
+	14 -> 48
+	12 -> 49
+	13 -> 49
+	3 -> 49
+	14 -> 49
+	12 -> 50
+	13 -> 50
+	3 -> 50
+	14 -> 50
+	12 -> 51
+	13 -> 51
+	3 -> 51
+	14 -> 51
+	12 -> 52
+	13 -> 52
+	3 -> 52
+	14 -> 52
+	12 -> 53
+	13 -> 53
+	3 -> 53
+	14 -> 53
+	12 -> 54
+	13 -> 54
+	3 -> 54
+	14 -> 54
+	12 -> 55
+	13 -> 55
+	3 -> 55
+	14 -> 55
+	12 -> 56
+	13 -> 56
+	3 -> 56
+	14 -> 56
+	12 -> 57
+	13 -> 57
+	3 -> 57
+	14 -> 57
+	12 -> 58
+	13 -> 58
+	3 -> 58
+	14 -> 58
+	12 -> 59
+	13 -> 59
+	3 -> 59
+	14 -> 59
+	12 -> 60
+	13 -> 60
+	3 -> 60
+	14 -> 60
+	12 -> 61
+	13 -> 61
+	3 -> 61
+	14 -> 61
+	12 -> 62
+	13 -> 62
+	3 -> 62
+	14 -> 62
+	12 -> 63
+	13 -> 63
+	3 -> 63
+	14 -> 63
+	12 -> 64
+	13 -> 64
+	3 -> 64
+	14 -> 64
+	12 -> 65
+	13 -> 65
+	3 -> 65
+	14 -> 65
+	12 -> 66
+	13 -> 66
+	3 -> 66
+	14 -> 66
+	12 -> 67
+	13 -> 67
+	3 -> 67
+	14 -> 67
+	12 -> 68
+	13 -> 68
+	3 -> 68
+	14 -> 68
+	12 -> 69
+	13 -> 69
+	3 -> 69
+	14 -> 69
+	12 -> 70
+	13 -> 70
+	3 -> 70
+	14 -> 70
+	12 -> 71
+	13 -> 71
+	3 -> 71
+	14 -> 71
+	12 -> 72
+	13 -> 72
+	3 -> 72
+	14 -> 72
+	12 -> 73
+	13 -> 73
+	3 -> 73
+	14 -> 73
+	12 -> 74
+	13 -> 74
+	3 -> 74
+	14 -> 74
+	12 -> 75
+	13 -> 75
+	3 -> 75
+	14 -> 75
+	12 -> 76
+	13 -> 76
+	3 -> 76
+	14 -> 76
+	12 -> 77
+	13 -> 77
+	3 -> 77
+	14 -> 77
+	12 -> 78
+	13 -> 78
+	3 -> 78
+	14 -> 78
+	12 -> 79
+	13 -> 79
+	3 -> 79
+	14 -> 79
+	12 -> 80
+	13 -> 80
+	3 -> 80
+	14 -> 80
+	12 -> 81
+	13 -> 81
+	3 -> 81
+	14 -> 81
+	12 -> 82
+	13 -> 82
+	3 -> 82
+	14 -> 82
+	12 -> 83
+	13 -> 83
+	3 -> 83
+	14 -> 83
+	12 -> 84
+	13 -> 84
+	3 -> 84
+	14 -> 84
+	12 -> 85
+	13 -> 85
+	3 -> 85
+	14 -> 85
+	12 -> 86
+	13 -> 86
+	3 -> 86
+	14 -> 86
+	12 -> 87
+	13 -> 87
+	3 -> 87
+	14 -> 87
+	12 -> 88
+	13 -> 88
+	3 -> 88
+	14 -> 88
+	12 -> 89
+	13 -> 89
+	3 -> 89
+	14 -> 89
+	12 -> 90
+	13 -> 90
+	3 -> 90
+	14 -> 90
+	12 -> 91
+	13 -> 91
+	3 -> 91
+	14 -> 91
+	12 -> 92
+	13 -> 92
+	3 -> 92
+	14 -> 92
+	12 -> 93
+	13 -> 93
+	3 -> 93
+	14 -> 93
+	12 -> 94
+	13 -> 94
+	3 -> 94
+	14 -> 94
+	12 -> 95
+	13 -> 95
+	3 -> 95
+	14 -> 95
+	12 -> 96
+	13 -> 96
+	3 -> 96
+	14 -> 96
+	12 -> 97
+	13 -> 97
+	3 -> 97
+	14 -> 97
+	12 -> 98
+	13 -> 98
+	3 -> 98
+	14 -> 98
+	12 -> 99
+	13 -> 99
+	3 -> 99
+	14 -> 99
+	12 -> 100
+	13 -> 100
+	3 -> 100
+	14 -> 100
+	12 -> 101
+	13 -> 101
+	3 -> 101
+	14 -> 101
+	12 -> 102
+	13 -> 102
+	3 -> 102
+	14 -> 102
+	12 -> 103
+	13 -> 103
+	3 -> 103
+	14 -> 103
+	12 -> 104
+	13 -> 104
+	3 -> 104
+	14 -> 104
+	12 -> 105
+	13 -> 105
+	3 -> 105
+	14 -> 105
+	12 -> 106
+	13 -> 106
+	3 -> 106
+	14 -> 106
+	12 -> 107
+	13 -> 107
+	3 -> 107
+	14 -> 107
+	12 -> 108
+	13 -> 108
+	3 -> 108
+	14 -> 108
+	12 -> 109
+	13 -> 109
+	3 -> 109
+	14 -> 109
+	12 -> 110
+	13 -> 110
+	3 -> 110
+	14 -> 110
+	12 -> 111
+	13 -> 111
+	3 -> 111
+	14 -> 111
+	12 -> 112
+	13 -> 112
+	3 -> 112
+	14 -> 112
+	12 -> 113
+	13 -> 113
+	3 -> 113
+	14 -> 113
+	12 -> 114
+	13 -> 114
+	3 -> 114
+	14 -> 114
+	116 -> 115
+	117 -> 116
+	118 -> 117
+	119 -> 118
+	9 -> 119
+}            

@@ -1,0 +1,31 @@
+#file with sample annotations:
+metasheet: 'metasheet.csv'
+
+#run name:
+run: 'nepc_vs_prad_validation_plus_new'
+
+#number of iterations used for cross validation:
+iterations: 100
+
+#files used by MeDIPs for calucating CpG enrichment. To generate on the fly, set to ""
+genome_relH: ref_files/bsgenome.hsapiens.ucsc.hg19_relH.rds
+genome_GoGe: ref_files/bsgenome.hsapiens.ucsc.hg19_GoGe.rds
+
+#bed file specifying regions to remove from consideration
+blacklist: 'ref_files/hg19-blacklist.v2.bed'
+
+#bed file specifying regions to exclude from the relative methylation score (rms) analysis
+rms_exclude: 'ref_files/hg19-blacklist.v2_wbc.peaks.merged.bed'
+
+#up-DMRs in training set must overlap with these - if set to '', will calculate from reference_case and reference_control samples in metasheet. If set to "none", will not restrict:
+restrict_up: ''
+
+#down-DMRs in training set must overlap with these - if set to '', will calculate from reference_case and reference_control samples in metasheet. If set to "none", will not 
+restrict_down: ''
+
+#samples can be paired end fastq files or medips files. can theoretically mix these, but hasn't been tested
+samples:
+ FFPED09E:
+     - /n/scratch3/users/b/brf340/FFPE_MeDIP/cfmedip/raw_data/FFPED09E_1.fq.gz
+     - /n/scratch3/users/b/brf340/FFPE_MeDIP/cfmedip/raw_data/FFPED09E_2.fq.gz
+ 

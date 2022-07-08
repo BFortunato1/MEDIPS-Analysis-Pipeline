@@ -2,7 +2,7 @@
 metasheet: 'metasheet.csv'
 
 #run name:
-run: 'nepc_vs_prad_validation_plus_new'
+run: 'medips_run'
 
 #number of iterations used for cross validation:
 iterations: 100
@@ -24,8 +24,16 @@ restrict_up: ''
 restrict_down: ''
 
 #samples can be paired end fastq files or medips files. can theoretically mix these, but hasn't been tested
-samples:
- FFPED09E:
-     - /n/scratch3/users/b/brf340/FFPE_MeDIP/cfmedip/raw_data/FFPED09E_1.fq.gz
-     - /n/scratch3/users/b/brf340/FFPE_MeDIP/cfmedip/raw_data/FFPED09E_2.fq.gz
+#FOR SINGLE-END samples
+SAMPLE1:
+ - /path/to/sample1.fastq.gz
+ #FOR PAIRED-END samples--WARNING: DON'T mix single-end samples w/ paired-end
+ SAMPLE1:
+  - /path/to/sample1_R1.fastq.gz
+  - /path/to/sample1_R2.fastq.gz
+#SAMPLE2:
+#ETC...
+
+ 
+
  

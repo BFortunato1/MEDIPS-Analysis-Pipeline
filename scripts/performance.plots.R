@@ -56,7 +56,7 @@ write.table(format(data.frame(auc_summary), digits=3), quote=FALSE, row.names=FA
   file=file.path(out.dir, "auc_summary_100iter.txt"))
 
 #plot of auc
-cols <- c("PRAD" = "blue", "NEPC" = "orange")
+cols <- c("control" = "blue", "case" = "orange")
 
 tmp %>% 
   group_by(iteration,Type) %>%

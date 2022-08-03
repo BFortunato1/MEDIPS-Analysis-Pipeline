@@ -39,16 +39,18 @@ def get_targets(wildcards):
 	#plot_qc target:
 	ls.append("analysis/qc_plots/" + config['run'] + "/main_chr_unique_reads.pdf")
 	ls.append("analysis/qc_plots/" + config['run'] + "/CpG_enrichment.pdf")
+	
+	if config["DMRs"] == 1:
 
-	#group_plots targets:
-	ls.append("analysis/dmrs/" + config['run'] + "/hclust.pdf")
+		#group_plots targets:
+		ls.append("analysis/dmrs/" + config['run'] + "/hclust.pdf")
 
-	#performance target:
-	ls.append("analysis/dmrs/" + config['run'] + "/auc_curves.pdf")
-	ls.append("analysis/dmrs/" + config['run'] + "/leave_one_out/auc_curves.pdf")
+		#performance target:
+		ls.append("analysis/dmrs/" + config['run'] + "/auc_curves.pdf")
+		ls.append("analysis/dmrs/" + config['run'] + "/leave_one_out/auc_curves.pdf")
 
-	#rms-based score using reference DMRs:
-	ls.append("analysis/dmrs/" + config['run'] + "/rms/auc_curve.pdf")
+		#rms-based score using reference DMRs:
+		ls.append("analysis/dmrs/" + config['run'] + "/rms/auc_curve.pdf")
 
 	return ls
 

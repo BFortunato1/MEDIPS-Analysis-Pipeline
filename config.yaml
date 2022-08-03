@@ -23,6 +23,9 @@ restrict_up: ''
 #down-DMRs in training set must overlap with these - if set to '', will calculate from reference_case and reference_control samples in metasheet. If set to "none", will not 
 restrict_down: ''
 
+#Designate whether or not DMRs analysis is needed. If set to 0, the analysis will be skipped
+DMRs: 0
+
 #samples can be paired end fastq files or medips files. can theoretically mix these, but hasn't been tested
 #FOR SINGLE-END samples
 SAMPLE1:

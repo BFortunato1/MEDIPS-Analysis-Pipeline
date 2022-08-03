@@ -5,6 +5,7 @@
 
 # call as: "Rscript scripts/MeDIPS.R {sample} {bam} {output directory}
 
+suppressMessages(library(rtracklayer))
 suppressMessages(library(MEDIPS))
 suppressMessages(library(BSgenome.Hsapiens.UCSC.hg19))
 source("scripts/MEDIPS.CpGenrich.new.R") #an updated MEDIPS.CpGenrich function that doesn't require RangedData, which is no longer supported
@@ -40,6 +41,9 @@ medips_function <- function(sample, bam, outdir, genome.relH.file, genome.GoGe.f
 
 	# export wig file for medip object
 	MEDIPS.exportWIG(Set=medip, file=file.path(outdir, paste0(sample,".wig")), format="rpkm", descr=sample)
+	
+	#convert wig to bw and export
+	wigToBigWig(x = (sample,".wig"), seqinfo = ref,genome, dest = paste0(sample,".bw"), clip = FALSE)
 
 	# "coupling set" with CG content of each window
 	if(file.exists("analysis/couplingset/couplingset.rds")) {	
@@ -76,5 +80,6 @@ arg_bam = args[2]
 arg_outdir = args[3]
 genome.relH.file=args[4]
 genome.GoGe.file=args[5]
+ref.genome = args[6]
 
 medips_function(arg_sample, arg_bam, arg_outdir, genome.relH.file, genome.GoGe.file)

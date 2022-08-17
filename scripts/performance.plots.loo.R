@@ -8,15 +8,20 @@ library(plotROC)
 args = commandArgs( trailingOnly = TRUE )
 out.dir=args[1]
 metasheet=args[2]
+iter=args[3]
+
 
 # read sample annotations in metasheet file
 meta=read.table(metasheet, header=T, sep=",")
+print(meta)
 
-# keep only samples labeled case or control
-meta = subset(meta, Class %in% c("case", "control"))
+
+# keep only samples labeled reference_case or control
+meta = subset(meta, Class %in% c("reference_reference_case", "reference_control"))
+print(meta)
 
 files = c()
-for (s in meta$SampleName){files <- c(files,file.path(out.dir, s, "sample_prob_table.tsv"))}
+for(i in sprintf("%03d", 1:iter)){files <- c(files,paste0(out.dir,"/iter.",i,"/sample_prob_table.tsv"))}
 
 theme_set(theme_bw())
 
@@ -35,7 +40,7 @@ tmp <- tmp %>%
 
 tmp$SampleName = tmp$sample_name %>% 
   stringr::str_replace(".dedup.bam","") %>% 
-  stringr::str_replace("case_","") %>% 
+  stringr::str_replace("reference_case_","") %>% 
   stringr::str_replace("control_","") %>%
   stringr::str_replace("\\.","-")
 #the last line above is necessary because the '-' in the labels are replaced with "."
@@ -86,7 +91,7 @@ sortLvlsByVar.fnc <- function(oldFactor, sortingVariable, ascending = TRUE) {
 
 sample_probs_all <- tmp 
 
-sub <- sample_probs_all %>% mutate(truth = as.numeric(true_label=="case"))
+sub <- sample_probs_all %>% mutate(truth = as.numeric(true_label=="reference_case"))
 curves <-  calculate_roc(D=sub$truth, M=sub$class_prob, ci = FALSE, alpha = 0.05)
 
 auc_plot <- ggplot() +

@@ -13,12 +13,11 @@ iter=args[3]
 
 # read sample annotations in metasheet file
 meta=read.table(metasheet, header=T, sep=",")
-print(meta)
 
 
 # keep only samples labeled reference_case or control
 meta = subset(meta, Class %in% c("reference_reference_case", "reference_control"))
-print(meta)
+
 
 files = c()
 for(i in sprintf("%03d", 1:iter)){files <- c(files,paste0(out.dir,"/iter.",i,"/sample_prob_table.tsv"))}

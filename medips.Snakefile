@@ -186,10 +186,12 @@ rule align:
 	output:
 		sam = temp("analysis/bowtie2/{sample}/{sample}.sam"),  ### need to test whether this really deletes sam file
 		log = "analysis/bowtie2/{sample}/{sample}.bowtie2.log"
+		bam = "analysis/bowtie2/{sample}/{sample}.bam"
 	params:
 		hg19 = "ref_files/indexes/hg19"		
 	shell:
-		"bowtie2 -x {params.hg19} -p 4 -S {output.sam} -1 {input.fq1} -2 {input.fq2} 2> {output.log}"
+		"bowtie2 -x {params.hg19} -p 4 -S {output.sam} -1 {input.fq1} -2 {input.fq2} 2> {output.log} &&"
+		"samtools view -S -b output.sam > output.bam"
 
 # convert sam file to bam file
 rule sam_to_bam:
